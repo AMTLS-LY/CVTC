@@ -63,7 +63,7 @@ The UI allows physicians to upload MRI images, view annotations, and validate re
 ### Workflow Overview
 The CVTC framework processes MRI images through several stages: skull stripping, data augmentation, feature extraction, diagnosis, and lesion annotation. The overall workflow is illustrated below:
 
-![Workflow Diagram](images/image1.png)
+![Workflow Diagram](CVTC/images/image1.png)
 
 1. **Skull Stripping**: Use LinkNet3D to separate brain regions from the skull.
 2. **Data Augmentation**: Apply MBIE (Multi-dimensional Brain Image Enhancement) for multi-channel enhancements.
@@ -76,7 +76,7 @@ LinkNet3D is a 3D segmentation network that efficiently extracts brain regions b
 
 Example results of unprocessed vs. processed MRI slices after skull stripping:
 
-![Skull Stripping Results](images/image2.png)
+![Skull Stripping Results](CVTC/images/image2.png)
 
 ### Data Augmentation with MBIE
 MBIE enhances MRI images by processing RGB channels separately (e.g., CLAHE on green, unsharp masking on blue, sharpening on red) to improve contrast and detail while preserving 95.33% of original features. This augments the dataset and boosts model robustness.
@@ -115,7 +115,7 @@ Additional results:
 ### Lesion Annotation Showcase
 CAGM provides precise lesion maps, highlighting suspicious areas in AD MRI images. Below is an example of annotated MRI slices:
 
-![Lesion Annotation Results](images/image3.png)
+![Lesion Annotation Results](CVTC/images/image3.png)
 
 Ablation studies confirm the contributions of each component (e.g., SAE improves accuracy by 2-3%).
 
