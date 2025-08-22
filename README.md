@@ -146,3 +146,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 For questions, contact the corresponding author: Peiluan Li (email not provided in doc).
+## Additional Information
+For more content related to this project, including an extended version of CVTC, please see https://github.com/AMTLS-LY/CVTC_M.
