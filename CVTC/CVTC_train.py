@@ -234,7 +234,7 @@ class Transformer(nn.Module):
 
         return x
 
-class CVTC(nn.Module):
+class Crossformer(nn.Module):
     def __init__(
         self,
         dim = (64, 128, 256, 512),
@@ -249,7 +249,7 @@ class CVTC(nn.Module):
         channels = 3,
         feature_dim=20
     ):
-        super(CVTC,self,).__init__()
+        super(Crossformer,self,).__init__()
 
         dim = cast_tuple(dim, 4)
         depth = cast_tuple(depth, 4)
@@ -408,7 +408,7 @@ def split_and_create_dataloaders(root_dir, train_ratio=0.8, batch_size=64, seed=
 
     return train_loader, test_loader, categories
 
-model=CVTC(
+model=Crossformer(
         dim = (32, 64, 128, 256),
         depth = (2, 2, 2, 2),
         global_window_size = (8, 4, 2, 1),
