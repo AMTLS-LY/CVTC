@@ -254,12 +254,12 @@ test=torch.randn(12,8,32,32)
 model=Transformer(dim=8,local_window_size=8,global_window_size=16,depth=2,dim_head=8)
 print(model(test).size())
 
-# CrossFormer（支持批量坐标跟踪）
-class CrossFormer(nn.Module):
+# CVTC（支持批量坐标跟踪）
+class CVTC(nn.Module):
     def __init__(self, dim=(64, 128, 256, 512), depth=(2, 2, 8, 2), global_window_size=(8, 4, 2, 1),
                  local_window_size=16, cross_embed_kernel_sizes=((4, 8, 16, 32), (2, 4), (2, 4), (2, 4)),
                  cross_embed_strides=(4, 2, 2, 2), num_classes=10, attn_dropout=0., ff_dropout=0., channels=3, feature_dim=20):
-        super(CrossFormer, self).__init__()
+        super(CVTC, self).__init__()
         dim = cast_tuple(dim, 4)
         depth = cast_tuple(depth, 4)
         global_window_size = cast_tuple(global_window_size, 4)
@@ -411,7 +411,7 @@ def find_important_regions_batch(feature_maps, tracker_coords_batch, logits, tar
 
 # GUI相关函数
 def load_model():
-    model = CrossFormer(
+    model = CVTC(
         dim=(32, 64, 128, 256), depth=(2, 2, 2, 2), global_window_size=(8, 4, 2, 1), local_window_size=16,
         cross_embed_kernel_sizes=((2, 4, 6, 8), (2, 4), (2, 4), (2, 4)), cross_embed_strides=(2, 2, 2, 2),
         num_classes=3, attn_dropout=0.2, ff_dropout=0.2, channels=3).to(device)
