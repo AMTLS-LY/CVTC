@@ -242,7 +242,7 @@ class Transformer(nn.Module):
 # 确保dim>=dim_head  因为heads = dim // dim_head 否则heads就为0
 model=Transformer(dim=8,local_window_size=8,global_window_size=16,depth=2,dim_head=8)
 
-class CrossFormer(nn.Module):
+class CVTC(nn.Module):
     def __init__(
         self,
         dim = (64, 128, 256, 512),
@@ -257,7 +257,7 @@ class CrossFormer(nn.Module):
         channels = 3,
         feature_dim=20
     ):
-        super(CrossFormer,self,).__init__()
+        super(CVTC,self,).__init__()
 
         dim = cast_tuple(dim, 4)
         depth = cast_tuple(depth, 4)
@@ -334,7 +334,7 @@ new_test_loader = DataLoader(new_test_data, batch_size=32, shuffle=False)
 
 # 初始化模型
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-model = CrossFormer(
+model = CVTC(
     dim=(32, 64, 128, 256),  # 确保这些参数与训练时一致
     depth=(2, 2, 2, 2),
     global_window_size=(8, 4, 2, 1),
