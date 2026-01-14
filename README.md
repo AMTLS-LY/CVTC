@@ -133,11 +133,8 @@ Thanks to the dataset providers and reviewers. Special thanks to Yao Miaoran for
 ## Citation
 If you use CVTC in your research, please cite:
 ```
-@article{CVTC2025,
-  title={CVTC: A Lightweight Model for Accurate Alzheimer's MRI Analysis and Lesion Annotation},
-  author={Lu, Yiwei and Yu, Hongcheng and Li, Tianbao and Meng, Yuting and Lu, Jianbo and Li, Peiluan},
-  journal={TBD},
-  year={2025}
+@article{
+Lu, Y., Yu, H., Li, T. et al. A lightweight CVTC model for accurate Alzheimer’s MRI analysis and lesion annotation. npj Digit. Med. 9, 38 (2026). https://doi.org/10.1038/s41746-025-02212-x
 }
 ```
 
